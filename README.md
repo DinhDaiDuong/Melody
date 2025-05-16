@@ -1,12 +1,6 @@
 ## PROJECT: MELODY APP
 
-### CLASSICAL MUSIC APP DEVELOPMENT
-Instructor: Nguyễn Thị Thanh Trúc
-## Student Contributors:
-| Leader  | Member | Member | Member | Member |
-| ------------- | ------------- | --------------------------|------------------------|------------------------|
-|  [![](https://avatars.githubusercontent.com/u/105732042?v=4)](https://github.com/vocongbinh)  | [![](https://avatars.githubusercontent.com/u/111514441?v=4)](https://github.com/phuochungus) |[![](https://avatars.githubusercontent.com/u/97241076?v=4)](https://github.com/ManhHoDinh)| [![](https://avatars.githubusercontent.com/u/100852896?v=4)](https://github.com/Daiduong1593572468) | [![](https://avatars.githubusercontent.com/u/107528091?s=96&v=4)](https://github.com/Ngan1808) |
-| [Võ Công Bình - 21521880](https://github.com/vocongbinh) | [Lý Thanh Tú Anh - 21521823](https://github.com/anhtu193) |[Hồ Đình Mạnh - 21522327](https://github.com/ManhHoDinh)| [Đinh Đại Dương - 21521986](https://github.com/Daiduong1593572468) | [Phạm Xuân Vinh - 18521657](https://github.com/Ngan1808) |
+
 
 
 ## Technologies Used:
@@ -27,20 +21,6 @@ Welcome to Melody App, the ultimate destination for classical music enthusiasts.
 
   ## Login/ Signup page
   ![Uploading image.png…]()
-
-
-
-  ## 🕵️ Home page
-  ![image](https://github.com/ManhHoDinh/Melody/assets/105732042/26ca7117-ae5d-43b2-b188-d520f75765a9)
-
-  ## Detail music page
-  ![image](https://github.com/ManhHoDinh/Melody/assets/105732042/bd09bc62-190e-481d-9f25-2becda6aaf94)
-
-  ## Album page
-![image](https://github.com/ManhHoDinh/Melody/assets/105732042/1a67e1ca-8cf2-4615-93e5-6df2d3bdfb70)
-
-  ##  Playlist page
-  ![image](https://github.com/ManhHoDinh/Melody/assets/105732042/0647dcf6-f4fb-4b27-bf39-1040796146f7)
 
 
 
@@ -68,17 +48,6 @@ I deeply appreciate every member of this team for showing relentless effort for 
 
 ## Additional information
 
- [Hồ Đình Mạnh - 21522327](https://github.com/ManhHoDinh) 
- Email: 21522327@gm.uit.edu.vn
-
- [Lý Thanh Tú Anh - 21521823](https://github.com/anhtu193) 
- Email: 21521823@gm.uit.edu.vn
-
- [Võ Công Bình - 21521880](https://github.com/vocongbinh) 
- Email: 21521880@gm.uit.edu.vn
-
  [Đinh Đại Dương - 21521986](https://github.com/Daiduong1593572468) 
  Email: 21521986@gm.uit.edu.vn
 
- [Phạm Xuân Vinh - 18521657](https://github.com/Ngan1808)
- Email: 18521657@gm.uit.edu.vn

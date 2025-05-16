@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "188029078111",
+    "project_id": "melody-c1456",
+    "storage_bucket": "melody-c1456.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:188029078111:android:429a0a91813bf2208469ea",
+        "android_client_info": {
+          "package_name": "com.melody.melody"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvBVxabVL6fl9kANtQejaZGz_Q0p2obZU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

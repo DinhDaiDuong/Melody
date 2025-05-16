@@ -1,0 +1,2 @@
+D:/DoAn/Melody/android/app/.cxx/Debug/5s436o4b/armeabi-v7a/CMakeFiles/edit_cache.dir
+D:/DoAn/Melody/android/app/.cxx/Debug/5s436o4b/armeabi-v7a/CMakeFiles/rebuild_cache.dir
