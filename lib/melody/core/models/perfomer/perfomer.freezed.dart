@@ -25,8 +25,12 @@ mixin _$Perfomer {
   String get music => throw _privateConstructorUsedError;
   String get image => throw _privateConstructorUsedError;
 
+  /// Serializes this Perfomer to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Perfomer
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $PerfomerCopyWith<Perfomer> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -49,6 +53,8 @@ class _$PerfomerCopyWithImpl<$Res, $Val extends Perfomer>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Perfomer
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -97,6 +103,8 @@ class __$$PerfomerImplCopyWithImpl<$Res>
       _$PerfomerImpl _value, $Res Function(_$PerfomerImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Perfomer
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -174,11 +182,13 @@ class _$PerfomerImpl with DiagnosticableTreeMixin implements _Perfomer {
             (identical(other.image, image) || other.image == image));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, name, id, music, image);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Perfomer
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PerfomerImplCopyWith<_$PerfomerImpl> get copyWith =>
@@ -210,8 +220,11 @@ abstract class _Perfomer implements Perfomer {
   String get music;
   @override
   String get image;
+
+  /// Create a copy of Perfomer
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PerfomerImplCopyWith<_$PerfomerImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

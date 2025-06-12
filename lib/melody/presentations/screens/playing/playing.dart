@@ -11,6 +11,7 @@ import 'package:melody/melody/presentations/screens/playing/widgets/neu_box.dart
 import 'package:provider/provider.dart';
 
 import '../../../core/helper/image_helper.dart';
+import '../../../presentations/screens/recommendations/recommendations_screen.dart';
 
 final commentController = TextEditingController();
 
@@ -63,29 +64,44 @@ class Playing extends StatelessWidget {
                         // );
                         Get.toNamed('/queue');
                       },
-                      icon: Icon(Icons.menu))
+                      icon: Icon(Icons.menu)),
+                  IconButton(
+                    icon: const Icon(Icons.recommend),
+                    onPressed: () {
+                      if (currentSong != null) {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => RecommendationsScreen(
+                              currentSong: currentSong,
+                            ),
+                          ),
+                        );
+                      }
+                    },
+                  ),
                 ],
               ),
 
-                  const SizedBox(
-                    height: 25,
-                  ),
-                  // song artwork
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                    child: NeuBox(
-                        child: Column(
-                      children: [
-                        // image
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(8),
-                          child: ImageHelper.loadFromNetwork(
-                            currentSong.songImagePath,
-                            height: 320,
-                            width: 320,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
+              const SizedBox(
+                height: 25,
+              ),
+              // song artwork
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                child: NeuBox(
+                    child: Column(
+                  children: [
+                    // image
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(8),
+                      child: ImageHelper.loadFromNetwork(
+                        currentSong.songImagePath,
+                        height: 320,
+                        width: 320,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
 
                     // song and artist name and fav icon
                     Padding(
@@ -413,8 +429,7 @@ class Playing extends StatelessWidget {
                                     .toList();
                                 return ListView.builder(
                                   shrinkWrap: true,
-                                  physics:
-                                      NeverScrollableScrollPhysics(), 
+                                  physics: NeverScrollableScrollPhysics(),
                                   itemCount: comments?.length,
                                   itemBuilder: (context, index) {
                                     return CommentItem(

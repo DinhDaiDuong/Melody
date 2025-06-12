@@ -68,25 +68,40 @@ class PlaylistRequest {
   }
 
   static Future<List<Song>> getFavoriteSongs() async {
-    Playlist? playlist = await getFavoritePlaylist();
-    List<Song> allSongs = await SongRequest.getAllSongs().first;
-    return allSongs.where((e) => playlist!.songIds.contains(e.songId)).toList();
+    try {
+      Playlist? playlist = await getFavoritePlaylist();
+      if (playlist == null) return [];
+
+      List<Song> allSongs = await SongRequest.getAllSongs().first;
+      return allSongs
+          .where((e) => playlist.songIds.contains(e.songId))
+          .toList();
+    } catch (e) {
+      print('Error getting favorite songs: $e');
+      return [];
+    }
   }
 
   static Future<Playlist?> getFavoritePlaylist() async {
-    DocumentSnapshot<Map<String, dynamic>> userDoc = await FirebaseHelper
-        .userCollection
-        .doc(FirebaseAuth.instance.currentUser!.uid)
-        .get();
-    UserModel user = UserModel.fromJson(userDoc.data()!);
+    try {
+      DocumentSnapshot userDoc = await FirebaseHelper.userCollection
+          .doc(FirebaseAuth.instance.currentUser!.uid)
+          .get();
+      UserModel user =
+          UserModel.fromJson(userDoc.data() as Map<String, dynamic>);
 
-    for (String playlistId in user.playlistIds) {
-      Playlist playlist = await getById(playlistId);
-      if (playlist.type == 'favorite') {
-        return playlist;
+      for (String playlistId in user.playlistIds) {
+        if (playlistId.isEmpty) continue; // Skip empty playlist IDs
+        Playlist playlist = await getById(playlistId);
+        if (playlist.type == 'favorite') {
+          return playlist;
+        }
       }
+      return null;
+    } catch (e) {
+      print('Error getting favorite playlist: $e');
+      return null;
     }
-    return null;
   }
 
   static Future<void> addSongToFavorite(String songId) async {

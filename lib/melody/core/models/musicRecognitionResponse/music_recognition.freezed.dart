@@ -26,8 +26,12 @@ mixin _$MusicRecognitionResponse {
   @JsonKey(name: 'result')
   Result? get result => throw _privateConstructorUsedError;
 
+  /// Serializes this MusicRecognitionResponse to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of MusicRecognitionResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $MusicRecognitionResponseCopyWith<MusicRecognitionResponse> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -56,6 +60,8 @@ class _$MusicRecognitionResponseCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of MusicRecognitionResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -74,6 +80,8 @@ class _$MusicRecognitionResponseCopyWithImpl<$Res,
     ) as $Val);
   }
 
+  /// Create a copy of MusicRecognitionResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ResultCopyWith<$Res>? get result {
@@ -114,6 +122,8 @@ class __$$MusicRecognitionResponseImplCopyWithImpl<$Res>
       $Res Function(_$MusicRecognitionResponseImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of MusicRecognitionResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -175,11 +185,13 @@ class _$MusicRecognitionResponseImpl
             (identical(other.result, result) || other.result == result));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, status, result);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of MusicRecognitionResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$MusicRecognitionResponseImplCopyWith<_$MusicRecognitionResponseImpl>
@@ -209,8 +221,11 @@ abstract class _MusicRecognitionResponse implements MusicRecognitionResponse {
   @override
   @JsonKey(name: 'result')
   Result? get result;
+
+  /// Create a copy of MusicRecognitionResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$MusicRecognitionResponseImplCopyWith<_$MusicRecognitionResponseImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -240,8 +255,12 @@ mixin _$Result {
   @JsonKey(name: 'spotify')
   Spotify? get spotify => throw _privateConstructorUsedError;
 
+  /// Serializes this Result to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Result
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ResultCopyWith<Result> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -275,6 +294,8 @@ class _$ResultCopyWithImpl<$Res, $Val extends Result>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Result
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -328,6 +349,8 @@ class _$ResultCopyWithImpl<$Res, $Val extends Result>
     ) as $Val);
   }
 
+  /// Create a copy of Result
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AppleMusicCopyWith<$Res>? get appleMusic {
@@ -340,6 +363,8 @@ class _$ResultCopyWithImpl<$Res, $Val extends Result>
     });
   }
 
+  /// Create a copy of Result
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $SpotifyCopyWith<$Res>? get spotify {
@@ -385,6 +410,8 @@ class __$$ResultImplCopyWithImpl<$Res>
       _$ResultImpl _value, $Res Function(_$ResultImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Result
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -525,12 +552,14 @@ class _$ResultImpl with DiagnosticableTreeMixin implements _Result {
             (identical(other.spotify, spotify) || other.spotify == spotify));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, artist, title, album,
       releaseDate, label, timecode, songLink, appleMusic, spotify);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Result
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ResultImplCopyWith<_$ResultImpl> get copyWith =>
@@ -585,8 +614,11 @@ abstract class _Result implements Result {
   @override
   @JsonKey(name: 'spotify')
   Spotify? get spotify;
+
+  /// Create a copy of Result
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ResultImplCopyWith<_$ResultImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -626,8 +658,12 @@ mixin _$AppleMusic {
   @JsonKey(name: 'composerName')
   String? get composerName => throw _privateConstructorUsedError;
 
+  /// Serializes this AppleMusic to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AppleMusic
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AppleMusicCopyWith<AppleMusic> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -668,6 +704,8 @@ class _$AppleMusicCopyWithImpl<$Res, $Val extends AppleMusic>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AppleMusic
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -746,6 +784,8 @@ class _$AppleMusicCopyWithImpl<$Res, $Val extends AppleMusic>
     ) as $Val);
   }
 
+  /// Create a copy of AppleMusic
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ArtworkCopyWith<$Res>? get artwork {
@@ -758,6 +798,8 @@ class _$AppleMusicCopyWithImpl<$Res, $Val extends AppleMusic>
     });
   }
 
+  /// Create a copy of AppleMusic
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $PlayParamsCopyWith<$Res>? get playParams {
@@ -809,6 +851,8 @@ class __$$AppleMusicImplCopyWithImpl<$Res>
       _$AppleMusicImpl _value, $Res Function(_$AppleMusicImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AppleMusic
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1027,7 +1071,7 @@ class _$AppleMusicImpl with DiagnosticableTreeMixin implements _AppleMusic {
                 other.composerName == composerName));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -1046,7 +1090,9 @@ class _$AppleMusicImpl with DiagnosticableTreeMixin implements _AppleMusic {
       trackNumber,
       composerName);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AppleMusic
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AppleMusicImplCopyWith<_$AppleMusicImpl> get copyWith =>
@@ -1123,8 +1169,11 @@ abstract class _AppleMusic implements AppleMusic {
   @override
   @JsonKey(name: 'composerName')
   String? get composerName;
+
+  /// Create a copy of AppleMusic
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AppleMusicImplCopyWith<_$AppleMusicImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1138,8 +1187,12 @@ mixin _$Previews {
   @JsonKey(name: 'url')
   String? get url => throw _privateConstructorUsedError;
 
+  /// Serializes this Previews to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Previews
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $PreviewsCopyWith<Previews> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1162,6 +1215,8 @@ class _$PreviewsCopyWithImpl<$Res, $Val extends Previews>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Previews
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1195,6 +1250,8 @@ class __$$PreviewsImplCopyWithImpl<$Res>
       _$PreviewsImpl _value, $Res Function(_$PreviewsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Previews
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1242,11 +1299,13 @@ class _$PreviewsImpl with DiagnosticableTreeMixin implements _Previews {
             (identical(other.url, url) || other.url == url));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, url);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Previews
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PreviewsImplCopyWith<_$PreviewsImpl> get copyWith =>
@@ -1270,8 +1329,11 @@ abstract class _Previews implements Previews {
   @override
   @JsonKey(name: 'url')
   String? get url;
+
+  /// Create a copy of Previews
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PreviewsImplCopyWith<_$PreviewsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1299,8 +1361,12 @@ mixin _$Artwork {
   @JsonKey(name: 'textColor4')
   String? get textColor4 => throw _privateConstructorUsedError;
 
+  /// Serializes this Artwork to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Artwork
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ArtworkCopyWith<Artwork> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -1330,6 +1396,8 @@ class _$ArtworkCopyWithImpl<$Res, $Val extends Artwork>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Artwork
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1405,6 +1473,8 @@ class __$$ArtworkImplCopyWithImpl<$Res>
       _$ArtworkImpl _value, $Res Function(_$ArtworkImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Artwork
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1534,12 +1604,14 @@ class _$ArtworkImpl with DiagnosticableTreeMixin implements _Artwork {
                 other.textColor4 == textColor4));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, width, height, url, bgColor,
       textColor1, textColor2, textColor3, textColor4);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Artwork
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ArtworkImplCopyWith<_$ArtworkImpl> get copyWith =>
@@ -1590,8 +1662,11 @@ abstract class _Artwork implements Artwork {
   @override
   @JsonKey(name: 'textColor4')
   String? get textColor4;
+
+  /// Create a copy of Artwork
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ArtworkImplCopyWith<_$ArtworkImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1607,8 +1682,12 @@ mixin _$PlayParams {
   @JsonKey(name: 'kind')
   String? get kind => throw _privateConstructorUsedError;
 
+  /// Serializes this PlayParams to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of PlayParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $PlayParamsCopyWith<PlayParams> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1633,6 +1712,8 @@ class _$PlayParamsCopyWithImpl<$Res, $Val extends PlayParams>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of PlayParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1672,6 +1753,8 @@ class __$$PlayParamsImplCopyWithImpl<$Res>
       _$PlayParamsImpl _value, $Res Function(_$PlayParamsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PlayParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1730,11 +1813,13 @@ class _$PlayParamsImpl with DiagnosticableTreeMixin implements _PlayParams {
             (identical(other.kind, kind) || other.kind == kind));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, kind);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PlayParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PlayParamsImplCopyWith<_$PlayParamsImpl> get copyWith =>
@@ -1762,8 +1847,11 @@ abstract class _PlayParams implements PlayParams {
   @override
   @JsonKey(name: 'kind')
   String? get kind;
+
+  /// Create a copy of PlayParams
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PlayParamsImplCopyWith<_$PlayParamsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1787,8 +1875,12 @@ mixin _$Artists {
   @JsonKey(name: 'uri')
   String? get uri => throw _privateConstructorUsedError;
 
+  /// Serializes this Artists to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Artists
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ArtistsCopyWith<Artists> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -1818,6 +1910,8 @@ class _$ArtistsCopyWithImpl<$Res, $Val extends Artists>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Artists
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1856,6 +1950,8 @@ class _$ArtistsCopyWithImpl<$Res, $Val extends Artists>
     ) as $Val);
   }
 
+  /// Create a copy of Artists
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ExternalUrlsCopyWith<$Res>? get externalUrls {
@@ -1896,6 +1992,8 @@ class __$$ArtistsImplCopyWithImpl<$Res>
       _$ArtistsImpl _value, $Res Function(_$ArtistsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Artists
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2000,12 +2098,14 @@ class _$ArtistsImpl with DiagnosticableTreeMixin implements _Artists {
             (identical(other.uri, uri) || other.uri == uri));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, externalUrls, href, id, name, type, uri);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Artists
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ArtistsImplCopyWith<_$ArtistsImpl> get copyWith =>
@@ -2048,8 +2148,11 @@ abstract class _Artists implements Artists {
   @override
   @JsonKey(name: 'uri')
   String? get uri;
+
+  /// Create a copy of Artists
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ArtistsImplCopyWith<_$ArtistsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2091,8 +2194,12 @@ mixin _$Spotify {
   @JsonKey(name: 'uri')
   String? get uri => throw _privateConstructorUsedError;
 
+  /// Serializes this Spotify to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Spotify
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SpotifyCopyWith<Spotify> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -2133,6 +2240,8 @@ class _$SpotifyCopyWithImpl<$Res, $Val extends Spotify>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Spotify
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2216,6 +2325,8 @@ class _$SpotifyCopyWithImpl<$Res, $Val extends Spotify>
     ) as $Val);
   }
 
+  /// Create a copy of Spotify
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AlbumCopyWith<$Res>? get album {
@@ -2228,6 +2339,8 @@ class _$SpotifyCopyWithImpl<$Res, $Val extends Spotify>
     });
   }
 
+  /// Create a copy of Spotify
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ExternalIdsCopyWith<$Res>? get externalIds {
@@ -2240,6 +2353,8 @@ class _$SpotifyCopyWithImpl<$Res, $Val extends Spotify>
     });
   }
 
+  /// Create a copy of Spotify
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ExternalUrlsCopyWith<$Res>? get externalUrls {
@@ -2293,6 +2408,8 @@ class __$$SpotifyImplCopyWithImpl<$Res>
       _$SpotifyImpl _value, $Res Function(_$SpotifyImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Spotify
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2511,7 +2628,7 @@ class _$SpotifyImpl with DiagnosticableTreeMixin implements _Spotify {
             (identical(other.uri, uri) || other.uri == uri));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -2531,7 +2648,9 @@ class _$SpotifyImpl with DiagnosticableTreeMixin implements _Spotify {
       type,
       uri);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Spotify
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SpotifyImplCopyWith<_$SpotifyImpl> get copyWith =>
@@ -2610,8 +2729,11 @@ abstract class _Spotify implements Spotify {
   @override
   @JsonKey(name: 'uri')
   String? get uri;
+
+  /// Create a copy of Spotify
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SpotifyImplCopyWith<_$SpotifyImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2647,8 +2769,12 @@ mixin _$Album {
   @JsonKey(name: 'uri')
   String? get uri => throw _privateConstructorUsedError;
 
+  /// Serializes this Album to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Album
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AlbumCopyWith<Album> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -2684,6 +2810,8 @@ class _$AlbumCopyWithImpl<$Res, $Val extends Album>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Album
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2752,6 +2880,8 @@ class _$AlbumCopyWithImpl<$Res, $Val extends Album>
     ) as $Val);
   }
 
+  /// Create a copy of Album
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ExternalUrlsCopyWith<$Res>? get externalUrls {
@@ -2798,6 +2928,8 @@ class __$$AlbumImplCopyWithImpl<$Res>
       _$AlbumImpl _value, $Res Function(_$AlbumImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Album
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2990,7 +3122,7 @@ class _$AlbumImpl with DiagnosticableTreeMixin implements _Album {
             (identical(other.uri, uri) || other.uri == uri));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -3007,7 +3139,9 @@ class _$AlbumImpl with DiagnosticableTreeMixin implements _Album {
       type,
       uri);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Album
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AlbumImplCopyWith<_$AlbumImpl> get copyWith =>
@@ -3075,8 +3209,11 @@ abstract class _Album implements Album {
   @override
   @JsonKey(name: 'uri')
   String? get uri;
+
+  /// Create a copy of Album
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AlbumImplCopyWith<_$AlbumImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3090,8 +3227,12 @@ mixin _$ExternalUrls {
   @JsonKey(name: 'spotify')
   String? get spotify => throw _privateConstructorUsedError;
 
+  /// Serializes this ExternalUrls to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ExternalUrls
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ExternalUrlsCopyWith<ExternalUrls> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3115,6 +3256,8 @@ class _$ExternalUrlsCopyWithImpl<$Res, $Val extends ExternalUrls>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ExternalUrls
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3148,6 +3291,8 @@ class __$$ExternalUrlsImplCopyWithImpl<$Res>
       _$ExternalUrlsImpl _value, $Res Function(_$ExternalUrlsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ExternalUrls
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3195,11 +3340,13 @@ class _$ExternalUrlsImpl with DiagnosticableTreeMixin implements _ExternalUrls {
             (identical(other.spotify, spotify) || other.spotify == spotify));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, spotify);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ExternalUrls
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ExternalUrlsImplCopyWith<_$ExternalUrlsImpl> get copyWith =>
@@ -3223,8 +3370,11 @@ abstract class _ExternalUrls implements ExternalUrls {
   @override
   @JsonKey(name: 'spotify')
   String? get spotify;
+
+  /// Create a copy of ExternalUrls
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ExternalUrlsImplCopyWith<_$ExternalUrlsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3238,8 +3388,12 @@ mixin _$ExternalIds {
   @JsonKey(name: 'isrc')
   String? get isrc => throw _privateConstructorUsedError;
 
+  /// Serializes this ExternalIds to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ExternalIds
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ExternalIdsCopyWith<ExternalIds> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3263,6 +3417,8 @@ class _$ExternalIdsCopyWithImpl<$Res, $Val extends ExternalIds>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ExternalIds
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3296,6 +3452,8 @@ class __$$ExternalIdsImplCopyWithImpl<$Res>
       _$ExternalIdsImpl _value, $Res Function(_$ExternalIdsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ExternalIds
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3343,11 +3501,13 @@ class _$ExternalIdsImpl with DiagnosticableTreeMixin implements _ExternalIds {
             (identical(other.isrc, isrc) || other.isrc == isrc));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, isrc);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ExternalIds
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ExternalIdsImplCopyWith<_$ExternalIdsImpl> get copyWith =>
@@ -3371,8 +3531,11 @@ abstract class _ExternalIds implements ExternalIds {
   @override
   @JsonKey(name: 'isrc')
   String? get isrc;
+
+  /// Create a copy of ExternalIds
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ExternalIdsImplCopyWith<_$ExternalIdsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3390,8 +3553,12 @@ mixin _$Images {
   @JsonKey(name: 'width')
   int? get width => throw _privateConstructorUsedError;
 
+  /// Serializes this Images to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Images
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ImagesCopyWith<Images> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -3416,6 +3583,8 @@ class _$ImagesCopyWithImpl<$Res, $Val extends Images>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Images
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3461,6 +3630,8 @@ class __$$ImagesImplCopyWithImpl<$Res>
       _$ImagesImpl _value, $Res Function(_$ImagesImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Images
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3531,11 +3702,13 @@ class _$ImagesImpl with DiagnosticableTreeMixin implements _Images {
             (identical(other.width, width) || other.width == width));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, height, url, width);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Images
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ImagesImplCopyWith<_$ImagesImpl> get copyWith =>
@@ -3566,8 +3739,11 @@ abstract class _Images implements Images {
   @override
   @JsonKey(name: 'width')
   int? get width;
+
+  /// Create a copy of Images
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ImagesImplCopyWith<_$ImagesImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

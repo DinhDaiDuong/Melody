@@ -25,8 +25,12 @@ mixin _$Composer {
   String get about => throw _privateConstructorUsedError;
   String get portrait => throw _privateConstructorUsedError;
 
+  /// Serializes this Composer to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Composer
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ComposerCopyWith<Composer> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -50,6 +54,8 @@ class _$ComposerCopyWithImpl<$Res, $Val extends Composer>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Composer
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -99,6 +105,8 @@ class __$$ComposerImplCopyWithImpl<$Res>
       _$ComposerImpl _value, $Res Function(_$ComposerImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Composer
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -179,12 +187,14 @@ class _$ComposerImpl with DiagnosticableTreeMixin implements _Composer {
                 other.portrait == portrait));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, composerId, composerName, about, portrait);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Composer
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ComposerImplCopyWith<_$ComposerImpl> get copyWith =>
@@ -216,8 +226,11 @@ abstract class _Composer implements Composer {
   String get about;
   @override
   String get portrait;
+
+  /// Create a copy of Composer
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ComposerImplCopyWith<_$ComposerImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -9,10 +9,12 @@ import 'package:melody/melody/core/helper/firebase_helper.dart';
 import 'package:melody/melody/core/models/artist/artist.dart';
 import 'package:melody/melody/core/models/firebase/artist_request.dart';
 import 'package:melody/melody/core/models/song/song.dart';
+import 'package:melody/melody/core/models/song/musical_features.dart';
 import 'package:melody/melody/presentations/widgets/custom_button.dart';
 import 'package:melody/melody/presentations/widgets/custom_textfield.dart';
 import 'package:path/path.dart' as path;
 import 'package:get/get.dart';
+import 'package:melody/melody/core/services/recommendation_service.dart';
 
 class UploadSongPage extends StatefulWidget {
   const UploadSongPage({super.key});
@@ -211,22 +213,16 @@ class _UploadSongPageState extends State<UploadSongPage> {
 
                           showDialog(
                               context: context,
-                              builder: (context) {
-                                return Center(
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
+                              barrierDismissible: false,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  content: Column(
+                                    mainAxisSize: MainAxisSize.min,
                                     children: [
                                       CircularProgressIndicator(),
-                                      SizedBox(
-                                        height: 20,
-                                      ),
+                                      SizedBox(height: 20),
                                       Text(
-                                        "Uploading",
-                                        style: TextStyle(
-                                            color: Colors.white, fontSize: 16),
-                                      )
+                                          'Đang xử lý bài hát...\nVui lòng đợi trong giây lát'),
                                     ],
                                   ),
                                 );
@@ -275,31 +271,103 @@ class _UploadSongPageState extends State<UploadSongPage> {
                                 artworkDownloadUrl =
                                     await artworkRef.getDownloadURL();
                               }
-                              Song newSong = Song(
+                              // Get musical features from CSV
+                              final features = await RecommendationService
+                                  .getFeaturesFromCSV(
+                                songNameController.text.trim(),
+                                authorName
+                                    .trim(), // Use authorName instead of artistController
+                              );
+
+                              // If not found in CSV, try Spotify
+                              final musicalFeatures = features ??
+                                  await RecommendationService
+                                      .getFeaturesFromCSV(
+                                    songNameController.text.trim(),
+                                    authorName.trim(),
+                                  ) ??
+                                  MusicalFeatures(
+                                    acousticness: 0.5,
+                                    danceability: 0.7,
+                                    energy: 0.8,
+                                    instrumentalness: 0.2,
+                                    liveness: 0.3,
+                                    loudness: -6.0,
+                                    speechiness: 0.1,
+                                    tempo: 120.0,
+                                    valence: 0.6,
+                                    key: 0,
+                                    mode: 0,
+                                    durationMs: 180000,
+                                    timeSignature: 4,
+                                  );
+
+                              // Convert MusicalFeatures to Map
+                              final featuresMap = {
+                                'acousticness': musicalFeatures.acousticness,
+                                'danceability': musicalFeatures.danceability,
+                                'energy': musicalFeatures.energy,
+                                'instrumentalness':
+                                    musicalFeatures.instrumentalness,
+                                'liveness': musicalFeatures.liveness,
+                                'loudness': musicalFeatures.loudness,
+                                'speechiness': musicalFeatures.speechiness,
+                                'tempo': musicalFeatures.tempo,
+                                'valence': musicalFeatures.valence,
+                                'key': musicalFeatures.key,
+                                'mode': musicalFeatures.mode,
+                                'durationMs': musicalFeatures.durationMs,
+                                'timeSignature': musicalFeatures.timeSignature,
+                              };
+
+                              final song = Song(
                                 songId: songId,
+                                songName: songNameController.text.trim(),
                                 artistId: authorId,
-                                songName: songNameController.text,
-                                artistName: authorName,
-                                songImagePath: artworkDownloadUrl !=
-                                        null // default artwork if user didn't choose an image
+                                artistName: authorName.trim(),
+                                songImagePath: artworkDownloadUrl != null
                                     ? artworkDownloadUrl.toString()
                                     : "https://firebasestorage.googleapis.com/v0/b/melody-bf3aa.appspot.com/o/song_artworks%2Fdefaultartwork.jpg?alt=media&token=4146ab52-7d77-428f-bb5f-2741e662d20c",
                                 audioPath: songDownloadUrl.toString(),
+                                genre: "pop",
+                                features: musicalFeatures,
+                                times: [],
+                                commentsIds: [],
                               );
 
-                              FirebaseHelper.songCollection
+                              // Convert to JSON before saving to Firestore
+                              final songData = song.toJson();
+                              // Replace the features object with the Map
+                              songData['features'] = featuresMap;
+
+                              await FirebaseHelper.songCollection
                                   .doc(songId)
-                                  .set(newSong.toJson())
-                                  .whenComplete(
-                                      () => Navigator.of(context).pop());
-
-                              Fluttertoast.showToast(
-                                  msg: "Upload song successfully!");
-
-                              // add navigation to exit uploading page
-                              Get.back();
+                                  .set(songData)
+                                  .whenComplete(() {
+                                // Close loading dialog
+                                Navigator.of(context).pop();
+                                // Close upload page
+                                Navigator.of(context).pop();
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  const SnackBar(
+                                    content: Text('Upload bài hát thành công!'),
+                                    backgroundColor: Colors.green,
+                                  ),
+                                );
+                              });
                             } catch (e) {
-                              print(e);
+                              // Close loading dialog if it's showing
+                              if (Navigator.canPop(context)) {
+                                Navigator.of(context).pop();
+                              }
+                              print('Error uploading song: $e');
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: Text(
+                                      'Lỗi khi upload bài hát: ${e.toString()}'),
+                                  backgroundColor: Colors.red,
+                                ),
+                              );
                             }
                           } else {
                             print("User's not signed in");

@@ -25,8 +25,12 @@ mixin _$Music {
   String get artist => throw _privateConstructorUsedError;
   String get image => throw _privateConstructorUsedError;
 
+  /// Serializes this Music to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Music
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $MusicCopyWith<Music> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -48,6 +52,8 @@ class _$MusicCopyWithImpl<$Res, $Val extends Music>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Music
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -95,6 +101,8 @@ class __$$MusicImplCopyWithImpl<$Res>
       _$MusicImpl _value, $Res Function(_$MusicImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Music
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -172,11 +180,13 @@ class _$MusicImpl with DiagnosticableTreeMixin implements _Music {
             (identical(other.image, image) || other.image == image));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, name, id, artist, image);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Music
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$MusicImplCopyWith<_$MusicImpl> get copyWith =>
@@ -207,8 +217,11 @@ abstract class _Music implements Music {
   String get artist;
   @override
   String get image;
+
+  /// Create a copy of Music
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$MusicImplCopyWith<_$MusicImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

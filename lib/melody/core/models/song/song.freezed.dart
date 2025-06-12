@@ -21,17 +21,23 @@ Song _$SongFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Song {
   String get songId => throw _privateConstructorUsedError;
-  String get artistId => throw _privateConstructorUsedError;
   String get songName => throw _privateConstructorUsedError;
+  String get artistId => throw _privateConstructorUsedError;
   String get artistName => throw _privateConstructorUsedError;
   String get songImagePath => throw _privateConstructorUsedError;
-  @JsonKey(name: "times", fromJson: _sendAtFromJson, toJson: _sendAtToJson)
+  String get audioPath => throw _privateConstructorUsedError;
+  String get spotifyId => throw _privateConstructorUsedError;
+  String get genre => throw _privateConstructorUsedError;
+  MusicalFeatures get features => throw _privateConstructorUsedError;
   List<DateTime> get times => throw _privateConstructorUsedError;
   List<String> get commentsIds => throw _privateConstructorUsedError;
-  String get audioPath => throw _privateConstructorUsedError;
 
+  /// Serializes this Song to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Song
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SongCopyWith<Song> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -42,14 +48,18 @@ abstract class $SongCopyWith<$Res> {
   @useResult
   $Res call(
       {String songId,
-      String artistId,
       String songName,
+      String artistId,
       String artistName,
       String songImagePath,
-      @JsonKey(name: "times", fromJson: _sendAtFromJson, toJson: _sendAtToJson)
+      String audioPath,
+      String spotifyId,
+      String genre,
+      MusicalFeatures features,
       List<DateTime> times,
-      List<String> commentsIds,
-      String audioPath});
+      List<String> commentsIds});
+
+  $MusicalFeaturesCopyWith<$Res> get features;
 }
 
 /// @nodoc
@@ -62,30 +72,35 @@ class _$SongCopyWithImpl<$Res, $Val extends Song>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Song
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? songId = null,
-    Object? artistId = null,
     Object? songName = null,
+    Object? artistId = null,
     Object? artistName = null,
     Object? songImagePath = null,
+    Object? audioPath = null,
+    Object? spotifyId = null,
+    Object? genre = null,
+    Object? features = null,
     Object? times = null,
     Object? commentsIds = null,
-    Object? audioPath = null,
   }) {
     return _then(_value.copyWith(
       songId: null == songId
           ? _value.songId
           : songId // ignore: cast_nullable_to_non_nullable
               as String,
-      artistId: null == artistId
-          ? _value.artistId
-          : artistId // ignore: cast_nullable_to_non_nullable
-              as String,
       songName: null == songName
           ? _value.songName
           : songName // ignore: cast_nullable_to_non_nullable
+              as String,
+      artistId: null == artistId
+          ? _value.artistId
+          : artistId // ignore: cast_nullable_to_non_nullable
               as String,
       artistName: null == artistName
           ? _value.artistName
@@ -95,6 +110,22 @@ class _$SongCopyWithImpl<$Res, $Val extends Song>
           ? _value.songImagePath
           : songImagePath // ignore: cast_nullable_to_non_nullable
               as String,
+      audioPath: null == audioPath
+          ? _value.audioPath
+          : audioPath // ignore: cast_nullable_to_non_nullable
+              as String,
+      spotifyId: null == spotifyId
+          ? _value.spotifyId
+          : spotifyId // ignore: cast_nullable_to_non_nullable
+              as String,
+      genre: null == genre
+          ? _value.genre
+          : genre // ignore: cast_nullable_to_non_nullable
+              as String,
+      features: null == features
+          ? _value.features
+          : features // ignore: cast_nullable_to_non_nullable
+              as MusicalFeatures,
       times: null == times
           ? _value.times
           : times // ignore: cast_nullable_to_non_nullable
@@ -103,11 +134,17 @@ class _$SongCopyWithImpl<$Res, $Val extends Song>
           ? _value.commentsIds
           : commentsIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      audioPath: null == audioPath
-          ? _value.audioPath
-          : audioPath // ignore: cast_nullable_to_non_nullable
-              as String,
     ) as $Val);
+  }
+
+  /// Create a copy of Song
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MusicalFeaturesCopyWith<$Res> get features {
+    return $MusicalFeaturesCopyWith<$Res>(_value.features, (value) {
+      return _then(_value.copyWith(features: value) as $Val);
+    });
   }
 }
 
@@ -120,14 +157,19 @@ abstract class _$$SongImplCopyWith<$Res> implements $SongCopyWith<$Res> {
   @useResult
   $Res call(
       {String songId,
-      String artistId,
       String songName,
+      String artistId,
       String artistName,
       String songImagePath,
-      @JsonKey(name: "times", fromJson: _sendAtFromJson, toJson: _sendAtToJson)
+      String audioPath,
+      String spotifyId,
+      String genre,
+      MusicalFeatures features,
       List<DateTime> times,
-      List<String> commentsIds,
-      String audioPath});
+      List<String> commentsIds});
+
+  @override
+  $MusicalFeaturesCopyWith<$Res> get features;
 }
 
 /// @nodoc
@@ -137,30 +179,35 @@ class __$$SongImplCopyWithImpl<$Res>
   __$$SongImplCopyWithImpl(_$SongImpl _value, $Res Function(_$SongImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Song
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? songId = null,
-    Object? artistId = null,
     Object? songName = null,
+    Object? artistId = null,
     Object? artistName = null,
     Object? songImagePath = null,
+    Object? audioPath = null,
+    Object? spotifyId = null,
+    Object? genre = null,
+    Object? features = null,
     Object? times = null,
     Object? commentsIds = null,
-    Object? audioPath = null,
   }) {
     return _then(_$SongImpl(
       songId: null == songId
           ? _value.songId
           : songId // ignore: cast_nullable_to_non_nullable
               as String,
-      artistId: null == artistId
-          ? _value.artistId
-          : artistId // ignore: cast_nullable_to_non_nullable
-              as String,
       songName: null == songName
           ? _value.songName
           : songName // ignore: cast_nullable_to_non_nullable
+              as String,
+      artistId: null == artistId
+          ? _value.artistId
+          : artistId // ignore: cast_nullable_to_non_nullable
               as String,
       artistName: null == artistName
           ? _value.artistName
@@ -170,6 +217,22 @@ class __$$SongImplCopyWithImpl<$Res>
           ? _value.songImagePath
           : songImagePath // ignore: cast_nullable_to_non_nullable
               as String,
+      audioPath: null == audioPath
+          ? _value.audioPath
+          : audioPath // ignore: cast_nullable_to_non_nullable
+              as String,
+      spotifyId: null == spotifyId
+          ? _value.spotifyId
+          : spotifyId // ignore: cast_nullable_to_non_nullable
+              as String,
+      genre: null == genre
+          ? _value.genre
+          : genre // ignore: cast_nullable_to_non_nullable
+              as String,
+      features: null == features
+          ? _value.features
+          : features // ignore: cast_nullable_to_non_nullable
+              as MusicalFeatures,
       times: null == times
           ? _value._times
           : times // ignore: cast_nullable_to_non_nullable
@@ -178,10 +241,6 @@ class __$$SongImplCopyWithImpl<$Res>
           ? _value._commentsIds
           : commentsIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      audioPath: null == audioPath
-          ? _value.audioPath
-          : audioPath // ignore: cast_nullable_to_non_nullable
-              as String,
     ));
   }
 }
@@ -191,14 +250,16 @@ class __$$SongImplCopyWithImpl<$Res>
 class _$SongImpl implements _Song {
   const _$SongImpl(
       {required this.songId,
-      this.artistId = "",
-      this.songName = "",
-      this.artistName = "",
-      this.songImagePath = "",
-      @JsonKey(name: "times", fromJson: _sendAtFromJson, toJson: _sendAtToJson)
+      required this.songName,
+      required this.artistId,
+      required this.artistName,
+      required this.songImagePath,
+      required this.audioPath,
+      this.spotifyId = '',
+      required this.genre,
+      required this.features,
       final List<DateTime> times = const [],
-      final List<String> commentsIds = const [],
-      this.audioPath = ""})
+      final List<String> commentsIds = const []})
       : _times = times,
         _commentsIds = commentsIds;
 
@@ -208,20 +269,25 @@ class _$SongImpl implements _Song {
   @override
   final String songId;
   @override
-  @JsonKey()
-  final String artistId;
-  @override
-  @JsonKey()
   final String songName;
   @override
-  @JsonKey()
+  final String artistId;
+  @override
   final String artistName;
   @override
-  @JsonKey()
   final String songImagePath;
+  @override
+  final String audioPath;
+  @override
+  @JsonKey()
+  final String spotifyId;
+  @override
+  final String genre;
+  @override
+  final MusicalFeatures features;
   final List<DateTime> _times;
   @override
-  @JsonKey(name: "times", fromJson: _sendAtFromJson, toJson: _sendAtToJson)
+  @JsonKey()
   List<DateTime> get times {
     if (_times is EqualUnmodifiableListView) return _times;
     // ignore: implicit_dynamic_type
@@ -238,12 +304,8 @@ class _$SongImpl implements _Song {
   }
 
   @override
-  @JsonKey()
-  final String audioPath;
-
-  @override
   String toString() {
-    return 'Song(songId: $songId, artistId: $artistId, songName: $songName, artistName: $artistName, songImagePath: $songImagePath, times: $times, commentsIds: $commentsIds, audioPath: $audioPath)';
+    return 'Song(songId: $songId, songName: $songName, artistId: $artistId, artistName: $artistName, songImagePath: $songImagePath, audioPath: $audioPath, spotifyId: $spotifyId, genre: $genre, features: $features, times: $times, commentsIds: $commentsIds)';
   }
 
   @override
@@ -252,35 +314,45 @@ class _$SongImpl implements _Song {
         (other.runtimeType == runtimeType &&
             other is _$SongImpl &&
             (identical(other.songId, songId) || other.songId == songId) &&
-            (identical(other.artistId, artistId) ||
-                other.artistId == artistId) &&
             (identical(other.songName, songName) ||
                 other.songName == songName) &&
+            (identical(other.artistId, artistId) ||
+                other.artistId == artistId) &&
             (identical(other.artistName, artistName) ||
                 other.artistName == artistName) &&
             (identical(other.songImagePath, songImagePath) ||
                 other.songImagePath == songImagePath) &&
+            (identical(other.audioPath, audioPath) ||
+                other.audioPath == audioPath) &&
+            (identical(other.spotifyId, spotifyId) ||
+                other.spotifyId == spotifyId) &&
+            (identical(other.genre, genre) || other.genre == genre) &&
+            (identical(other.features, features) ||
+                other.features == features) &&
             const DeepCollectionEquality().equals(other._times, _times) &&
             const DeepCollectionEquality()
-                .equals(other._commentsIds, _commentsIds) &&
-            (identical(other.audioPath, audioPath) ||
-                other.audioPath == audioPath));
+                .equals(other._commentsIds, _commentsIds));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
       songId,
-      artistId,
       songName,
+      artistId,
       artistName,
       songImagePath,
+      audioPath,
+      spotifyId,
+      genre,
+      features,
       const DeepCollectionEquality().hash(_times),
-      const DeepCollectionEquality().hash(_commentsIds),
-      audioPath);
+      const DeepCollectionEquality().hash(_commentsIds));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Song
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SongImplCopyWith<_$SongImpl> get copyWith =>
@@ -297,36 +369,46 @@ class _$SongImpl implements _Song {
 abstract class _Song implements Song {
   const factory _Song(
       {required final String songId,
-      final String artistId,
-      final String songName,
-      final String artistName,
-      final String songImagePath,
-      @JsonKey(name: "times", fromJson: _sendAtFromJson, toJson: _sendAtToJson)
+      required final String songName,
+      required final String artistId,
+      required final String artistName,
+      required final String songImagePath,
+      required final String audioPath,
+      final String spotifyId,
+      required final String genre,
+      required final MusicalFeatures features,
       final List<DateTime> times,
-      final List<String> commentsIds,
-      final String audioPath}) = _$SongImpl;
+      final List<String> commentsIds}) = _$SongImpl;
 
   factory _Song.fromJson(Map<String, dynamic> json) = _$SongImpl.fromJson;
 
   @override
   String get songId;
   @override
-  String get artistId;
-  @override
   String get songName;
+  @override
+  String get artistId;
   @override
   String get artistName;
   @override
   String get songImagePath;
   @override
-  @JsonKey(name: "times", fromJson: _sendAtFromJson, toJson: _sendAtToJson)
+  String get audioPath;
+  @override
+  String get spotifyId;
+  @override
+  String get genre;
+  @override
+  MusicalFeatures get features;
+  @override
   List<DateTime> get times;
   @override
   List<String> get commentsIds;
+
+  /// Create a copy of Song
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String get audioPath;
-  @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SongImplCopyWith<_$SongImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

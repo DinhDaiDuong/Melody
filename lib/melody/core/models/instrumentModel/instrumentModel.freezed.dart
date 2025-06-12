@@ -25,8 +25,12 @@ mixin _$InstrumentModel {
   String get description => throw _privateConstructorUsedError;
   String get image => throw _privateConstructorUsedError;
 
+  /// Serializes this InstrumentModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of InstrumentModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $InstrumentModelCopyWith<InstrumentModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -50,6 +54,8 @@ class _$InstrumentModelCopyWithImpl<$Res, $Val extends InstrumentModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of InstrumentModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -98,6 +104,8 @@ class __$$InstrumentModelImplCopyWithImpl<$Res>
       _$InstrumentModelImpl _value, $Res Function(_$InstrumentModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of InstrumentModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -178,11 +186,13 @@ class _$InstrumentModelImpl
             (identical(other.image, image) || other.image == image));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, name, id, description, image);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of InstrumentModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$InstrumentModelImplCopyWith<_$InstrumentModelImpl> get copyWith =>
@@ -215,8 +225,11 @@ abstract class _InstrumentModel implements InstrumentModel {
   String get description;
   @override
   String get image;
+
+  /// Create a copy of InstrumentModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$InstrumentModelImplCopyWith<_$InstrumentModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

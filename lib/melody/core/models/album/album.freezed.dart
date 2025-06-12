@@ -27,8 +27,12 @@ mixin _$Album {
   String get image => throw _privateConstructorUsedError;
   List<String> get songIds => throw _privateConstructorUsedError;
 
+  /// Serializes this Album to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Album
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AlbumCopyWith<Album> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -56,6 +60,8 @@ class _$AlbumCopyWithImpl<$Res, $Val extends Album>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Album
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -119,6 +125,8 @@ class __$$AlbumImplCopyWithImpl<$Res>
       _$AlbumImpl _value, $Res Function(_$AlbumImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Album
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -217,12 +225,14 @@ class _$AlbumImpl implements _Album {
             const DeepCollectionEquality().equals(other._songIds, _songIds));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, name, id, artist_id, description,
       image, const DeepCollectionEquality().hash(_songIds));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Album
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AlbumImplCopyWith<_$AlbumImpl> get copyWith =>
@@ -259,8 +269,11 @@ abstract class _Album implements Album {
   String get image;
   @override
   List<String> get songIds;
+
+  /// Create a copy of Album
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AlbumImplCopyWith<_$AlbumImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
