@@ -11,7 +11,7 @@ import 'package:flutter/services.dart' show rootBundle;
 
 class RecommendationService {
   static const String _baseUrl = 'https://melody-recommendation.onrender.com';
-  static const Duration _timeout = Duration(seconds: 10);
+  static const Duration _timeout = Duration(seconds: 30);
   static final Map<String, MusicalFeatures> _featuresCache = {};
   static bool _isCacheInitialized = false;
 
@@ -19,16 +19,23 @@ class RecommendationService {
     if (_isCacheInitialized) return;
 
     try {
+      print('Starting to initialize cache...');
       final String csvData = await rootBundle.loadString('assets/data.csv');
       final lines = csvData.split('\n');
-      print('Initializing cache with ${lines.length} songs...');
+      print('CSV file loaded with ${lines.length} lines');
+
+      int processedCount = 0;
+      int errorCount = 0;
 
       for (final line in lines) {
         if (line.trim().isEmpty) continue;
 
         try {
           final values = line.split(',');
-          if (values.length < 20) continue;
+          if (values.length < 20) {
+            print('Skipping line with insufficient values: ${values.length}');
+            continue;
+          }
 
           final songName = values[14].toLowerCase().trim();
           String artistName = values[3].toLowerCase().trim();
@@ -42,6 +49,14 @@ class RecommendationService {
           }
           if (artistName.startsWith("'") && artistName.endsWith("'")) {
             artistName = artistName.substring(1, artistName.length - 1);
+          }
+
+          // Print first few entries for debugging
+          if (processedCount < 5) {
+            print('Processing entry ${processedCount + 1}:');
+            print('Song: $songName');
+            print('Artist: $artistName');
+            print('Values: ${values.join(' | ')}');
           }
 
           final features = MusicalFeatures(
@@ -62,13 +77,24 @@ class RecommendationService {
 
           final key = '$songName|$artistName';
           _featuresCache[key] = features;
+          processedCount++;
+
+          // Print progress every 1000 entries
+          if (processedCount % 1000 == 0) {
+            print('Processed $processedCount entries...');
+          }
         } catch (e) {
-          print('Error processing line for cache: $e');
+          print('Error processing line: $e');
+          print('Problematic line: $line');
+          errorCount++;
           continue;
         }
       }
 
-      print('Cache initialized with ${_featuresCache.length} songs');
+      print('Cache initialization completed:');
+      print('- Total entries processed: $processedCount');
+      print('- Errors encountered: $errorCount');
+      print('- Final cache size: ${_featuresCache.length}');
       _isCacheInitialized = true;
     } catch (e) {
       print('Error initializing cache: $e');
@@ -228,6 +254,7 @@ class RecommendationService {
 
       // Initialize cache if not already done
       if (!_isCacheInitialized) {
+        print('Cache not initialized, starting initialization...');
         await _initializeCache();
       }
 
@@ -237,6 +264,7 @@ class RecommendationService {
 
       print(
           'Searching for song: "$normalizedSongName" by "$normalizedArtistName" in cache');
+      print('Current cache size: ${_featuresCache.length}');
 
       // Try exact match first
       final key = '$normalizedSongName|$normalizedArtistName';
@@ -250,7 +278,9 @@ class RecommendationService {
         final [cachedSong, cachedArtist] = entry.key.split('|');
         if (cachedSong.contains(normalizedSongName) &&
             cachedArtist.contains(normalizedArtistName)) {
-          print('Found partial match in cache');
+          print('Found partial match in cache:');
+          print('- Cached song: $cachedSong');
+          print('- Cached artist: $cachedArtist');
           return entry.value;
         }
       }

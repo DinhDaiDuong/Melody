@@ -80,6 +80,8 @@ dependencies:
   fluttertoast: ^8.2.12
   speech_to_text: ^7.0.0
   path_provider: ^2.0.15
+  android_intent_plus: ^4.0.3
+  csv: ^5.1.1
 dev_dependencies:
   flutter_test:
     sdk: flutter
